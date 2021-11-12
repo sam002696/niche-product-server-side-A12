@@ -83,6 +83,13 @@ async function run() {
             res.send(result);
             console.log(result);
         });
+        //all users get 
+        app.get('/addUserInfo', async (req, res) => {
+            const cursor = usersCollection.find({});
+            const allUsers = await cursor.toArray();
+            res.send(allUsers);
+        })
+
         //  make admin
 
         app.put("/makeAdmin", async (req, res) => {
