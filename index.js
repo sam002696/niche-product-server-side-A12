@@ -84,7 +84,7 @@ async function run() {
             console.log(result);
         });
         //all users get 
-        app.get('/addUserInfo', async (req, res) => {
+        app.get('/allUsers', async (req, res) => {
             const cursor = usersCollection.find({});
             const allUsers = await cursor.toArray();
             res.send(allUsers);
